@@ -42,6 +42,7 @@ cd ../../
 mv ./about/$(cat ./graph.tk/about/_pagelist.txt | head -n 1).html ./about/index.html
 cp ./graph.tk/manifest.manifest ./
 cp -r ./graph.tk/min ./
+cp -r ./graph.tk/about/res_about ./about/
 cp ./graph.tk/release.html ./index.html
 cp ./graph.tk/*.png ./
 cp ./graph.tk/*.ico ./
