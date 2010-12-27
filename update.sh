@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+if [ "$#" -ne 1 ]
+then
+	echo "usage: $0 message"
+	exit 1
+fi
 if [ -e "j0cyRLVkmPlLn2DSZXa8tunik2o.txt" ]
 then
 	echo "Updating..."
@@ -69,13 +74,8 @@ find . -type f | grep -v "^\.\/graph\.tk\/" | grep -v "\/\." | while read commit
 do
 	git add "$commitme"
 done
-if [ "$#" -ne 2 ]
-then
-	git commit
-else
-	git commit -m "$1"
-fi
 
+git commit -m "$1"
 
 #lets package a chrome extension :)
 rm -rf ./tmp
