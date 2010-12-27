@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
 #This script takes stuff from the graph.tk repository, and puts it into the current directory then does a commit
-ls . | grep -v "graph\.tk" | grep -v "min" | grep -v "^\." | grep -v "^update\.sh$" | grep -v "^404\.html$" | grep -v "^CNAME$" | grep -v "^README\.md$" | while read f
-do
-	rm -rf $f
-done
+#ls . | grep -v "graph\.tk" | grep -v "min" | grep -v "^\." | grep -v "^update\.sh$" | grep -v "^404\.html$" | grep -v "^CNAME$" | grep -v "^README\.md$" | while read f
+#do
+#	rm -rf $f
+#done
 
-mkdir -p ./res_about
-
+rm -rf ./about
 if [ -d graph.tk ]
 then
 	echo "[OK]			Repo already there"
@@ -61,5 +60,10 @@ find . -type f | grep -v "^\.\/graph\.tk\/" | grep -v "\/\." | while read commit
 do
 	git add "$commitme"
 done
-git commit $1
+if [ "$#" -ne 2 ]
+then
+	git commit
+else
+	git commit -m "$1"
+fi
 git push
