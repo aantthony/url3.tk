@@ -12,8 +12,8 @@ else
 	exit
 fi
 
-#clean is only for aantthony
-clean
+#clean is a utility that removes all resource forks etc. (the @ in permissions)
+if which clean; then clean; fi
 #This script takes stuff from the graph.tk repository, and puts it into the current directory then does a commit
 #ls . | grep -v "graph\.tk" | grep -v "min" | grep -v "^\." | grep -v "^update\.sh$" | grep -v "^404\.html$" | grep -v "^CNAME$" | grep -v "^README\.md$" | while read f
 #do
@@ -89,6 +89,9 @@ cp ./graph.tk/*.gif ./tmp/
 
 rm -f ./tmp/apple*
 
+mv tmp chrome.pack
+
 cd graph.tk
 ./scripts/clean.sh
 cd ../
+if which clean; then clean; fi
