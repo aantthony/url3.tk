@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #This script takes stuff from the graph.tk repository, and puts it into the current directory then does a commit
-ls . | grep -v "graph\.tk" | grep -v "^\." | grep -v "^update\.sh$" | grep -v "^404\.html$" | grep -v "^CNAME$" | grep -v "^README\.md$" | while read f
+ls . | grep -v "graph\.tk" | grep -v "min" | grep -v "^\." | grep -v "^update\.sh$" | grep -v "^404\.html$" | grep -v "^CNAME$" | grep -v "^README\.md$" | while read f
 do
 	rm -rf $f
 done
