@@ -64,9 +64,7 @@ cp ./graph.tk/*.gif ./
 
 
 find . -type f -name "*.DS_Store" | grep -v "graph\.tk\/" | xargs rm
-cd graph.tk
-./scripts/clean.sh
-cd ../
+
 
 echo "[OK]			Compiled!"
 
@@ -88,3 +86,8 @@ cp ./graph.tk/release.html ./tmp/index.html
 cp ./graph.tk/*.png ./tmp/
 cp ./graph.tk/*.ico ./tmp/
 cp ./graph.tk/*.gif ./tmp/
+
+
+cd graph.tk
+./scripts/clean.sh
+cd ../
