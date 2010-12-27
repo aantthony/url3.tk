@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 if [ -e "j0cyRLVkmPlLn2DSZXa8tunik2o.txt" ]
 then
 	echo "Updating..."
@@ -7,6 +6,9 @@ else
 	echo "WRONG DIRECTORY!!!! EXITING NOW!!!"
 	exit
 fi
+
+#clean is only for aantthony
+clean
 #This script takes stuff from the graph.tk repository, and puts it into the current directory then does a commit
 #ls . | grep -v "graph\.tk" | grep -v "min" | grep -v "^\." | grep -v "^update\.sh$" | grep -v "^404\.html$" | grep -v "^CNAME$" | grep -v "^README\.md$" | while read f
 #do
@@ -73,4 +75,16 @@ then
 else
 	git commit -m "$1"
 fi
-git push
+
+
+#lets package a chrome extension :)
+rm -rf ./tmp
+mkdir -p ./tmp/about
+cp -R ./chrome ./tmp/
+
+cp -r ./graph.tk/min ./tmp/
+cp -r ./graph.tk/about/res_about ./tmp/about/
+cp ./graph.tk/release.html ./tmp/index.html
+cp ./graph.tk/*.png ./tmp/
+cp ./graph.tk/*.ico ./tmp/
+cp ./graph.tk/*.gif ./tmp/
