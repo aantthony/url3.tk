@@ -78,7 +78,7 @@ git commit -m "$1"
 #lets package a chrome extension :)
 rm -rf ./tmp
 mkdir -p ./tmp/about
-cp -R ./chrome ./tmp
+cp -R ./chrome/* ./tmp/
 
 cp -r ./graph.tk/min ./tmp/
 cp -r ./graph.tk/about/res_about ./tmp/about/
