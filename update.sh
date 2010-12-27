@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+if [ -e "j0cyRLVkmPlLn2DSZXa8tunik2o.txt" ]
+then
+	echo "Updating..."
+else
+	echo "WRONG DIRECTORY!!!! EXITING NOW!!!"
+	exit
+fi
 #This script takes stuff from the graph.tk repository, and puts it into the current directory then does a commit
 #ls . | grep -v "graph\.tk" | grep -v "min" | grep -v "^\." | grep -v "^update\.sh$" | grep -v "^404\.html$" | grep -v "^CNAME$" | grep -v "^README\.md$" | while read f
 #do
