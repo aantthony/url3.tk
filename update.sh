@@ -58,6 +58,7 @@ cp ./graph.tk/release.html ./index.html
 cp ./graph.tk/*.png ./
 cp ./graph.tk/*.ico ./
 cp ./graph.tk/*.gif ./
+cp ./graph.tk/excanvas.compiled.js ./
 #clear up junk
 
 
