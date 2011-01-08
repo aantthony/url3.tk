@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 if [ "$#" -ne 1 ]
 then
-	echo "usage: $0 message"
-	exit 1
+	message="https://github.com/aantthony/graph.tk/commit/"$(git rev-parse HEAD)
+#	echo "usage: $0 message"
+#	exit 1
+else
+	message="$1"
 fi
+#echo $message
+#exit
 if [ -e "j0cyRLVkmPlLn2DSZXa8tunik2o.txt" ]
 then
 	echo "Updating..."
@@ -73,7 +78,7 @@ do
 	git add "$commitme"
 done
 
-git commit -m "$1"
+git commit -m "$message"
 
 #lets package a chrome extension :)
 rm -rf ./tmp
