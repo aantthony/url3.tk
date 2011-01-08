@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
-if [ "$#" -ne 1 ]
-then
-	message="https://github.com/aantthony/graph.tk/commit/"$(git rev-parse HEAD)
-#	echo "usage: $0 message"
-#	exit 1
-else
-	message="$1"
-fi
+
 #echo $message
 #exit
 if [ -e "j0cyRLVkmPlLn2DSZXa8tunik2o.txt" ]
@@ -77,7 +70,16 @@ find . -type f | grep -v "^\.\/graph\.tk\/" | grep -v "\/\." | while read commit
 do
 	git add "$commitme"
 done
-
+if [ "$#" -ne 1 ]
+then
+	cd ./graph.tk
+	message="https://github.com/aantthony/graph.tk/commit/"$(git rev-parse HEAD)
+	cd ../
+#	echo "usage: $0 message"
+#	exit 1
+else
+	message="$1"
+fi
 git commit -m "$message"
 
 #lets package a chrome extension :)
