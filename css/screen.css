@@ -20,6 +20,10 @@ ul.posts{
     list-style:none;
     margin-left:0;
 }
+ul.posts img{
+    vertical-align:middle;
+    border:none;
+}
 img{border:none}
 .page{
     background:white;
