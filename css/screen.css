@@ -1,4 +1,83 @@
-body,html{
+*{
     margin:0;padding:0;
 }
 img{border:none}
+
+h1,h2,h3{
+    font-weight:normal;
+    padding-bottom:2px;
+}
+body{
+    background:#e8e8e8 url(bg.png) repeat-x;
+    font-family:HelveticaNeue-Light, HelveticaNeue, Helvetica,sans-serif;
+    padding-bottom:1em;
+}
+p{
+    font-size:medium;
+    margin-bottom:1em;
+}
+ul.posts{
+    list-style:none;
+}
+img{border:none}
+.page{
+    background:white;
+    border:1px solid #bbb;
+    -webkit-box-shadow:0px 1px 2px #aaa;
+    width:900px;
+    margin:auto;
+    padding:20px;
+    border-radius:4px;
+}
+header aside {
+    float:right;
+}
+header img{
+    float:left;
+}
+header aside a{
+    position:relative;
+    left:0px;
+    text-decoration:none;
+    color:black;
+    display:block;
+    background:rgba(255,255,255,0.7);
+    -webkit-transition: left 0.1s ease-out;
+    padding:1em;
+    margin:8px;
+    border-radius:5px;
+}
+header aside a:hover{
+    -webkit-box-shadow:0px 0px 5px #444;
+    left:5px;
+    background:rgba(255,255,255,0.9);
+}
+
+ol,ul{margin-left:2em}
+header,footer{
+    width:900px;
+    margin:auto;
+    padding:20px;
+    height:120px;
+}
+footer{
+    padding:10px;
+    font-size:small;
+    color:#888;
+    text-shadow:0px 1px 0px white;
+}
+footer:before{
+    content:"Copyright © ";
+}
+footer:after{
+    content:" 2011";
+}
+header a.h{
+    margin-top:43px;
+    width:800px;
+    text-shadow:0px 1px 0px white;
+    font-size:xx-large;
+    text-decoration:none;
+    display:block;
+    color:black;
+}
