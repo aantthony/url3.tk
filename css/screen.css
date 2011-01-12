@@ -12,6 +12,12 @@ body{
     font-family:HelveticaNeue-Light, HelveticaNeue, Helvetica,sans-serif;
     padding-bottom:1em;
 }
+.icon{
+    width:64px;
+    height:64px;
+    vertical-align:middle;
+    text-align:center;
+}
 p{
     font-size:medium;
     margin-bottom:1em;
