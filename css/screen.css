@@ -17,6 +17,7 @@ body{
     height:64px;
     vertical-align:middle;
     text-align:center;
+    display:inline-block;
 }
 p{
     font-size:medium;
