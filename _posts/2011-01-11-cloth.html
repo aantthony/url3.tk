@@ -69,22 +69,20 @@ function physics(){
                     Fy+=k*(r[1]-v[1])*(1-aspect*h/d);
                 }
                 if(y>0){
-					var r=vt[x+(y-1)*N];
-					
-					var d=(r[0]-v[0])*(r[0]-v[0])+(r[1]-v[1])*(r[1]-v[1]);
-					d=sqrt(d);
-					// F = -k *x 
-					Fx+=k*(r[0]-v[0])*(1-aspect*h/d);
-					Fy+=k*(r[1]-v[1])*(1-aspect*h/d);
-				}
-				vel[x+y*N][0]+=Fx;
-				vel[x+y*N][1]+=Fy;
-				vel[x+y*N][0]*=0.99;
-				vel[x+y*N][1]*=0.99;
-				vt[x+y*N][0]+=vel[x+y*N][0];
-				vt[x+y*N][1]+=vel[x+y*N][1];
-				vel[x+y*N][1]+=g;
-				
+                    var r=vt[x+(y-1)*N];
+                    var d=(r[0]-v[0])*(r[0]-v[0])+(r[1]-v[1])*(r[1]-v[1]);
+                    d=sqrt(d);
+                    // F = -k *x 
+                    Fx+=k*(r[0]-v[0])*(1-aspect*h/d);
+                    Fy+=k*(r[1]-v[1])*(1-aspect*h/d);
+                }
+                vel[x+y*N][0]+=Fx;
+                vel[x+y*N][1]+=Fy;
+                vel[x+y*N][0]*=0.99;
+                vel[x+y*N][1]*=0.99;
+                vt[x+y*N][0]+=vel[x+y*N][0];
+                vt[x+y*N][1]+=vel[x+y*N][1];
+                vel[x+y*N][1]+=g;
 			}
         }
     }
