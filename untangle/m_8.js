@@ -2,14 +2,16 @@ var untangle = (function (){
 var kTime=0.15;
 if(/iPhone/.test(navigator.userAgent)){kTime=1;}
 function win(){
+
+
+var z=timer.getValue();
+alert("Well done. You did it in "+z+" seconds.\nNot good enough. Try again!");
 score++;
 flicker(5);
-
-if(timer.getValue()<fastest){
-fastest=timer.getValue();
-
-
+if(z<fastest){
+fastest=z;
 }
+
 
 while(fdisp.childNodes.length){
 fdisp.removeChild(fdisp.childNodes[0]);
@@ -35,7 +37,7 @@ document.getElementById("ngbtn").onclick=function(){
 
 timer.reset();
 };
-function random_point(){var t=Math.random()*2.0*Math.PI;return {"x":0.5+0.3*Math.sin(t),"y":0.5+0.3*Math.cos(t)}; };
+function random_point(){var t=Math.random()*2.0*Math.PI;return {"x":0.5+0.45*Math.sin(t),"y":0.5+0.45*Math.cos(t)}; };
 function new_point(n){pt_c++;
 //vt.push({"x":0.5+0.3*n/d*Math.sin(theta),"y":0.5+0.3*n/d*Math.cos(theta+=0.006*d*d*d)});
 //vt.push({"x":Math.random(),"y":Math.random()});
@@ -155,15 +157,17 @@ moves++;
 function drawNode(node){
 ctx.beginPath();
 for(i in node.childNodes){
-if(node.childNodes[i].p<vt.length){
-	ctx.beginPath();
-	ctx.moveTo(avt[node.p].x,avt[node.p].y);
-	ctx.lineTo(avt[node.childNodes[i].p].x,avt[node.childNodes[i].p].y);
-	ctx.stroke();
-	drawNode(node.childNodes[i]);
-	}else{
+    if(node.childNodes.hasOwnProperty(i)){
+        if(node.childNodes[i].p<vt.length){
+            ctx.beginPath();
+            ctx.moveTo(avt[node.p].x,avt[node.p].y);
+            ctx.lineTo(avt[node.childNodes[i].p].x,avt[node.childNodes[i].p].y);
+            ctx.stroke();
+            drawNode(node.childNodes[i]);
+        }else{
 		
-	}
+        }
+    }
 }
 
 }
@@ -342,10 +346,17 @@ return false;
 }
 function mup(){
 
-if(!ingame){return;}
-dragging=false;
-countMove();
-if(!interceptTest()){for(var i=0;i<pt_c;i++){vt[i]={"x":0.5,"y":0.5};}draw(30);win();ingame=false;}
+    if(!ingame){return;}
+    dragging=false;
+    countMove();
+    if(!interceptTest()){
+        for(var i=0;i<pt_c;i++){
+            vt[i]={"x":0.5,"y":0.5};
+        }
+        win();
+        draw(30);
+        ingame=false;
+    }
 }
 document.body.onmouseup=function (e){
 mup();
@@ -359,9 +370,9 @@ timer.reset();
 
 function publishScore(service){
 if(service=="twitter"){
-window.location='http://twitter.com/?status='+encodeURIComponent((fastest===Infinity)?"Untangle - HTML5 Game http://graph.tk/untangle/":"My fastest time in UntangleJS: "+fastest+" s. Play it here: http://graph.tk/untangle/");
+window.location='http://twitter.com/?status='+encodeURIComponent((fastest===Infinity)?"Untangle - HTML5 Game http://url3.tk/untangle/":"My fastest time in UntangleJS: "+fastest+" s. Play it here: http://url3.tk/untangle/");
 }else if(service=="facebook"){
-window.location='http://www.facebook.com/sharer.php?u=http%3A%2F%2Fgraph.tk%2Funtangle%2F&t='+encodeURIComponent('Untangle HTML5 Game')
+window.location='http://www.facebook.com/sharer.php?u=http%3A%2F%2Furl3.tk%2Funtangle%2F&t='+encodeURIComponent('Untangle HTML5 Game')
 
 
 }else{
