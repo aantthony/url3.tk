@@ -18,13 +18,13 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <div id="home" style="margin-right:305px">
     <h1>Projects</h1>
     <ul class="posts">
-        <li><a href="http://aantthony.github.com/graph.tk/about/"><div class="icon"><img src="http://aantthony.github.com/graph.tk/about/resources/logo.png" width="64px" /></div></a> <a href="http://aantthony.github.com/graph.tk/about/">Graph.tk</a> - Javascript Graphing Utility</li>
-        <li><a href="http://aantthony.github.com/BigPond-Usage-Meter/"><div class="icon"><img src="images/icons/bp.png" width="50px" /></div></a> <a href="http://aantthony.github.com/BigPond-Usage-Meter/">BigPond-Usage-Meter</a> - Menu bar item for Mac OS X that monitors your BigPond internet usage</li>
+        <li><a href="http://aantthony.github.com/graph.tk/about/"><div class="icon"><img src="http://aantthony.github.com/graph.tk/about/resources/logo.png" width="64" /></div></a> <a href="http://aantthony.github.com/graph.tk/about/">Graph.tk</a> - Javascript Graphing Utility</li>
+        <li><a href="http://aantthony.github.com/BigPond-Usage-Meter/"><div class="icon"><img src="images/icons/bp.png" width="50" /></div></a> <a href="http://aantthony.github.com/BigPond-Usage-Meter/">BigPond-Usage-Meter</a> - Menu bar item for Mac OS X that monitors your BigPond internet usage</li>
     </ul>
     <h1>Blog Posts</h1>
     <ul class="posts">
     {% for post in site.posts %}
-        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
     </ul>
 </div>
