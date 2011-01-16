@@ -40,18 +40,18 @@ function physics(){
                 var Fx=0;
                 var Fy=0;
                 var Fz=0;
-				if(shad==4){
+                if(shad==4){
                     Fx+=wind*Math.abs(Math.cos(theta));
                     Fy-=0.8*Math.abs(wind*Math.sin(theta));
                 }
-				if(x<(N-1)){
-					var r=vt[x+1+y*N];
-					var d=(r[0]-v[0])*(r[0]-v[0])+(r[1]-v[1])*(r[1]-v[1]);
-					d=sqrt(d);
-					// F = -k *x 
-					Fx+=k*(r[0]-v[0])*(1-h/d);
-					Fy+=k*(r[1]-v[1])*(1-h/d);
-				}
+                if(x<(N-1)){
+                    var r=vt[x+1+y*N];
+                    var d=(r[0]-v[0])*(r[0]-v[0])+(r[1]-v[1])*(r[1]-v[1]);
+                    d=sqrt(d);
+                    // F = -k *x 
+                    Fx+=k*(r[0]-v[0])*(1-h/d);
+                    Fy+=k*(r[1]-v[1])*(1-h/d);
+                }
 				if(x>0){
 					var r=vt[x-1+y*N];
 					var d=(r[0]-v[0])*(r[0]-v[0])+(r[1]-v[1])*(r[1]-v[1]);
