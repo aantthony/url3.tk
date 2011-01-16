@@ -4,37 +4,38 @@ title: Cloth Simulation in JavaScript
 ---
 <a href="/cloth" target="_blank">Open the cloth simulator.</a>
 <p>
+There are two modes.
+<ul><li>2D - all points are always on a plane, but they appear to be in 3d space, but the are really just moving closer to one another</li>
+<li>3D - There are two canvases - one for each eye. You have to go crosseyed.</li>
+</ul>
 The following function is called 44 times each frame:
+</p>
 {% highlight javascript %}
-
-	function physics(){
-        var aspect=1;
-        if(shad==4){
-            aspect=1/1.9;
-        }else if(shad==3){
-            aspect=1/2.0;
+function physics(){
+    var aspect=1;
+    if(shad==4){
+        aspect=1/1.9;
+    }else if(shad==3){
+        aspect=1/2.0;
+    }
+    var k=0.005;
+    var g=0.001/N*10;
+    var rt2=Math.sqrt(2);
+    var h=20;
+    if(m){vt[z]=[mx,my];}
+    var wind=0.001*Math.abs(Math.sin(wind_t/32)+Math.sin(wind_t/200)+Math.sin(wind_t/400)+Math.sin(wind_t/350));
+    wind_t++;
+    if(shad==4){
+        for(var y=0;y<N;y++){
+            vt[y*N][0]=vt[0][0];
+            vt[y*N][1]=vt[0][1]+y*aspect*h;
         }
-		var k=0.005;
-		var g=0.001/N*10;
-		var rt2=Math.sqrt(2);
-		var h=20;
-		if(m){vt[z]=[mx,my];}
-        
-        var wind=0.001*Math.abs(Math.sin(wind_t/32)+Math.sin(wind_t/200)+Math.sin(wind_t/400)+Math.sin(wind_t/350));
-        wind_t++;
-        
-        if(shad==4){
-            for(var y=0;y<N;y++){
-                vt[y*N][0]=vt[0][0];
-                vt[y*N][1]=vt[0][1]+y*aspect*h;
-            }
-        }
-                var theta=(wind_t/914);
-		for(var y=0;y<N;y++){
-			for(var x=0;x<N;x++){
-				if((y==0 && x==0) || (x==N-1 && shad!=4 && y==0) || (x==0 && shad==4) || (m&&x+y*N==z)){}else{
-				var v=vt[x+y*N];
-				
+    }
+    var theta=(wind_t/914);
+    for(var y=0;y<N;y++){
+        for(var x=0;x<N;x++){
+            if((y==0 && x==0) || (x==N-1 && shad!=4 && y==0) || (x==0 && shad==4) || (m&&x+y*N==z)){}else{
+                var v=vt[x+y*N];
 				var Fx=0;
 				var Fy=0;
                 var Fz=0;
@@ -42,8 +43,6 @@ The following function is called 44 times each frame:
                     Fx+=wind*Math.abs(Math.cos(theta));
                     Fy-=0.8*Math.abs(wind*Math.sin(theta));
                 }
-				
-				
 				if(x<(N-1)){
 					var r=vt[x+1+y*N];
 					var d=(r[0]-v[0])*(r[0]-v[0])+(r[1]-v[1])*(r[1]-v[1]);
@@ -78,9 +77,6 @@ The following function is called 44 times each frame:
 					Fx+=k*(r[0]-v[0])*(1-aspect*h/d);
 					Fy+=k*(r[1]-v[1])*(1-aspect*h/d);
 				}
-				
-				
-				
 				vel[x+y*N][0]+=Fx;
 				vel[x+y*N][1]+=Fy;
 				vel[x+y*N][0]*=0.99;
@@ -90,16 +86,9 @@ The following function is called 44 times each frame:
 				vel[x+y*N][1]+=g;
 				
 			}
-			}
-		}
-		if(m){vt[z]=[mx,my];}
-		//vt[0]=[0.5*(width-N*h),20];
-		//vt[N-1]=[width-0.5*(width-N*h),20]
-	}
-
+        }
+    }
+    if(m){vt[z]=[mx,my];}
+}
 {% endhighlight %}
 
-normal text
-</p>
-<p>
-Paragraph</p>
