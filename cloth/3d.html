@@ -1,0 +1,22 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+*{margin:0;padding:0;overflow:hidden;}
+body{background:#eee;}
+#info{position:fixed;left:0;top:0;padding:8px;font-family:sans-serif;z-Index:9999;}
+</style>
+<title>Javascript 2/3 D Cloth Sim - 3D Mode (crosseyed)</title>
+{% include analytics.html %}
+</head>
+<body>
+	<div id="info">Drag &amp; Press space &amp; Scroll. <a href="2d.html">2D</a> | 3D
+		</div>
+<canvas id="canvas" height="400" width="400"></canvas><canvas id="canvas2" height="400" width="400"></canvas>
+
+<script type="text/javascript" src="cloth3.js"></script>
+</body>
+</html>
