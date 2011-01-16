@@ -34,9 +34,10 @@ function physics(){
     var theta=(wind_t/914);
     for(var y=0;y<N;y++){
         for(var x=0;x<N;x++){
-            if((y==0 && x==0) || (x==N-1 && shad!=4 && y==0) || (x==0 && shad==4) || (m&&x+y*N==z)){}else{
+            if((y==0 && x==0) || (x==N-1 && shad!=4 && y==0) || (x==0 && shad==4) || (m&&x+y*N==z)){
+            }else{
                 var v=vt[x+y*N];
-				var Fx=0;
+                var Fx=0;
 				var Fy=0;
                 var Fz=0;
 				if(shad==4){
