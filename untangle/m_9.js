@@ -122,8 +122,9 @@ var time=0;
 var interval;
 var that=this;
 var tickRate=100;
+var begin=new Date();
 function tick(){
-	time+=tickRate;
+	time=new Date()-begin;
 	if(onchange){onchange(time/1000);}
 	if(time<=0){
 		clearInterval(interval);
@@ -134,6 +135,7 @@ function reset(){
 clearInterval(interval);
 interval=setInterval(tick,tickRate);
 time=0;
+begin=new Date();
 newgame();
 }
 return {
@@ -362,7 +364,7 @@ document.body.onmouseup=function (e){
 mup();
 };
 var tdisp=document.getElementById("tdisp");
-timer.attachTimeListener(function(t){var ts=t.toString();tdisp.childNodes[0].nodeValue=((!/\./.test(ts))?(ts+".0"):t)+" seconds";});
+timer.attachTimeListener(function(t){var ts=t.toFixed(1);tdisp.childNodes[0].nodeValue=ts+" seconds";});
 
 timer.reset();
 
