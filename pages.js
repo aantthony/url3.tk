@@ -7,7 +7,7 @@ for(i=0;i<faders.length;i++){
 	faders[i].style.top="0px";
 	faders[i].style.opacity=1.0;
 }
-},2500);
+},2200);
 var width=window.innerWidth;
 var height=window.innerHeight;
 var pages_elem=document.getElementById("pages");
@@ -70,8 +70,13 @@ function animate(){
 			pages[i].r+=Math.cos(Math.sin(i+1)*t*0.0001*Math.sin(i+1)*0.0001);
 		}
 		pages[i].y+=pages[i].vy;
-		pages[i].style.webkitTransform="translate("+pages[i].x+"px,"+pages[i].y+"px) rotate("+pages[i].r+"deg) ";
-	}
+        if(interval){
+            pages[i].style.webkitTransform="translate("+pages[i].x+"px,"+pages[i].y+"px) rotate("+pages[i].r+"deg) ";
+        }else{
+            pages[i].style.top=pages[i].y+"px";
+            pages[i].style.left=pages[i].x+"px";
+        }
+    }
     
 	setTimeout(animate,interval);
 }
