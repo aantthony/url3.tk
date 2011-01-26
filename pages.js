@@ -1,5 +1,6 @@
 function pages(n){
-document.body.onload=function(){
+
+window.addEventListener("load",function(){
 	setTimeout(function(){
 		var faders=document.getElementsByClassName("fade");
 for(i=0;i<faders.length;i++){
@@ -75,4 +76,4 @@ function animate(){
 	setTimeout(animate,interval);
 }
 animate();
-};}
+},false);}
