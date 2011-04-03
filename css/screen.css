@@ -79,6 +79,9 @@ header aside a:hover{
     left:5px;
     background:rgba(255,255,255,0.9);
 }
+.highlight{
+    margin-bottom:1em;
+}
 
 ol,ul{margin-left:2em}
 header{
