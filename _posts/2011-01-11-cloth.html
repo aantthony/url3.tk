@@ -24,7 +24,8 @@ function physics(){
     var rt2=Math.sqrt(2);
     var h=20;
     if(m){vt[z]=[mx,my];}
-    var wind=0.001*Math.abs(Math.sin(wind_t/32)+Math.sin(wind_t/200)+Math.sin(wind_t/400)+Math.sin(wind_t/350));
+    var wind=0.001*Math.abs(Math.sin(wind_t/32)+Math.sin(wind_t/200)+Math.sin(wind_t/400)+
+    Math.sin(wind_t/350));
     wind_t++;
     if(shad==4){
         for(var y=0;y<N;y++){
@@ -35,7 +36,8 @@ function physics(){
     var theta=(wind_t/914);
     for(var y=0;y<N;y++){
         for(var x=0;x<N;x++){
-            if((y==0 && x==0) || (x==N-1 && shad!=4 && y==0) || (x==0 && shad==4) || (m&&x+y*N==z)){
+            if((y==0 && x==0) || (x==N-1 && shad!=4 && y==0) ||
+            (x==0 && shad==4) || (m&&x+y*N==z)){
             }else{
                 var v=vt[x+y*N];
                 var Fx=0;

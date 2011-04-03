@@ -3,8 +3,7 @@ layout: post
 title: 5 Useful javascript tricks
 ---
 <p>Javascript is a great language. I've written a short list of five useful javascript features and techniques that are a must-know.</p>
-<ol>
-<li><h1>Closures</h1>
+<h2>1. Closures</h2>
 <p>Prevent setting global variables by putting all your code in a function. Like this:
 {% highlight javascript %}
 (function(){
@@ -15,8 +14,7 @@ title: 5 Useful javascript tricks
 {% endhighlight %}
 </p>
 <p>Usings closures promotes good code structure, protects private variables, and ensures that your code won't interfere with any other scripts running on the page.</p>
-</li>
-<li><h1>JSON</h1><p>JSON (JavaScript Object Notation) is a way to describe objects.</p>
+<h2>2. JSON</h2><p>JSON (JavaScript Object Notation) is a way to describe objects.</p>
 
 {% highlight javascript %}
 var me={
@@ -32,9 +30,7 @@ alert(me.name);//or alert(me["name"]);
 alert("JSON representation: "+JSON.stringify(me));
 alert(JSON.stringify(JSON.parse(JSON.stringify(me)))==JSON.stringify(me))
 {% endhighlight %}	
-
-</li>
-<li><h1>Prototyping</h1><p>
+<h2>3. Prototyping</h2><p>
 Have you ever used the new Keyword()? Well when you do, the object returned from the function (provided the function doesn't "return" an object manually), has it's prototype set.
 {% highlight javascript %}
 function Message(title,body,imagesrc){
@@ -62,11 +58,10 @@ Array.prototype.sum=function(){
 };
 alert([1,2,3].sum());//1+2+3=6
 {% endhighlight %}
-</li>
-<li><h1>jQuery</h1><p>
+<h2>4. jQuery</h2><p>
 jQuery is great! I suggest you read more about it in <a href="http://jqfundamentals.com/book/book.html">jQuery Fundementals</a> (A great guide), or on the <a href="">jQuery website</a>.
-</p></li>
-<li><h1>Console</h1><p>
+</p>
+<h2>5. Console</h2><p>
 I find using the consoles in Safari, Chrome and Firefox really speed up development. Using console.log() is often easier than messing around with alert().
 </p></li>
 </ol>

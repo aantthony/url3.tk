@@ -6,13 +6,15 @@ img{border:none}
 
 h1,h2,h3{
     font-weight:normal;
-    padding-bottom:2px;
-    font-family:Georgia;
+    font-family:Georgia,serif;
+    margin-bottom:0.5em;
 }
 body{
     background:#e8e8e8 url(bg.png) repeat-x;
-    font-family:HelveticaNeue-Light, HelveticaNeue, Helvetica,sans-serif;
+    /*font-family:HelveticaNeue-Light, HelveticaNeue, Helvetica,sans-serif;*/
+    font-family:Georgia,serif;
     padding-bottom:1em;
+    line-height:140%;
 }
 .icon{
     width:64px;
@@ -102,7 +104,7 @@ footer:after{
     content:" 2011";
 }
 header h1{
-    margin-top:36px;
+    margin-top:50px;
     font-size:250%;
 }
 header h1 a{
