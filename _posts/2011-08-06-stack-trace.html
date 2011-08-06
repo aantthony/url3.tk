@@ -1,0 +1,13 @@
+---
+layout: post
+title: Stack trace in JavaScript
+---
+
+In your editor, replace
+<code>
+(function ([a-zA-Z ]+)\w*\([^\)]*\)\w*{)
+</code>
+with
+<code>
+$1 console.log('  trace: $2');
+</code>
