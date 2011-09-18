@@ -65,7 +65,7 @@ my=(e.x===undefined?e.clientY:e.y)/width;
 }
 
 var buffer=[];
-var bufferlen=100;
+var bufferlen=200;
 var rt2=Math.sqrt(2);
 var c_s=1/bufferlen;//very slow
 var b=0;
