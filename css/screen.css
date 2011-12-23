@@ -40,6 +40,10 @@ ul.posts span{
     font-size:80%;
     color:#999;
 }
+
+ul.posts.darker span{
+    color:#444;
+}
 ul.posts img{
     vertical-align:middle;
     border:none;
