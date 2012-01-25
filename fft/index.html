@@ -1,0 +1,78 @@
+---
+layout: nil
+---
+<!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="chrome=1" /><title>jsFourier</title><link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" /><meta name="description" content="A motorbike game in Javascript using the HTML5 canvas element. Do flips and drive really fast for a good score." /><!--[if IE]><script src="excanvas.compiled.js"></script><![endif]--><style type="text/css">
+a:link{color:#ccc;font-size:small;}
+a:visited{color:#ddd;}
+.graph canvas{background:#fff url(xg.png) bottom left;position:relative;cursor:crosshair;}
+.graph{border:4px solid #ccc;width:800px;margin:4px;height:300px;background:rgba(255,255,255,0.3);-webkit-user-select:none;}
+body{
+	font-family:HelveticaNeue-Light, HelveticaNeue, Helvetica,sans-serif;color:#ccc;
+	
+}
+#all{min-width:1180px;}
+img{border:0}
+input[type=button]{padding:7px 11px 7px 11px;
+-webkit-box-shadow: white 0px 20px 20px -10px inset;
+-moz-box-shadow: white 0px 20px 20px -10px inset;
+-o-box-shadow: white 0px 20px 20px -10px inset;
+text-shadow:#f0f0f0 0px 1px 0px;
+box-shadow: white 0px 20px 20px -10px inset;background:#e5e5e5;border:1px solid #aaa;margin:8px;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px}
+input[type=button]:active{background:#ddd !important}
+input[type=button]:hover{background:#fafafa}
+.group{margin:8px;border:1px solid #555;-webkit-box-shadow:rgba(255,255,255,0.3) 0px 25px 30px inset;border-radius:4px;}
+
+</style></head><body><div id="all">	
+<div>
+	<div style="float:right">
+			<div class="group">
+				<input type="button" value="sine" onclick="importsine()" /><input type="button" value="δ(x)" onclick="importdelta()" /><input type="button" value="Ш(kx)" onclick="importshah()" /><input type="button" value="Gaussian" onclick="importgaussian()" /><input type="button" value="..." onclick="importcustom()" />
+			</div>
+			<div class="group">
+					<span style="padding:8px;">ƒ</span>
+					<input type="button" value="Reciprocal" onclick="reciprocal('a')" />
+					<input type="button" value="Scale" onclick="scaleq('a')" />
+			</div>
+			
+			<div class="group">
+
+				<span style="padding:8px;">&#8497;</span>
+				<input type="button" value="Differentiate" onclick="diff('b')" />
+				<input type="button" value="Integrate" onclick="integrate('b')" />
+				<input type="button" value="Self Convolve" onclick="square('b')" />
+				
+			</div>
+			<div class="group">
+				<san style="padding:8px;">Wave:</span>
+				<input type="button" value="1 slit" onclick="importbox()" /> <input type="button" value="2 slits" onclick="importinterference()" />
+			</div>
+			<div class="group">
+				<input type="button" value="Clear" onclick="that.load()" />
+			</div>
+
+		
+		
+	</div>
+	<div class="graph"><canvas id="canvas1" width="800" height="300"></canvas></div>
+</div>
+<div>
+	<div style="float:right">
+		
+			<div class="group">
+
+				<span style="padding:8px;">Basic</span>
+				<input type="button" value="Reciprocal" onclick="reciprocal('b')" />
+				<input type="button" value="Scale" onclick="scaleq('b')" />
+				
+			</div>
+			<div class="group">
+
+				<span style="padding:8px;">Select</span>
+				<input type="button" value="Pass" onclick="that.pass('b',1)" />
+				<input type="button" value="Stop" onclick="that.pass('b',2)" />(drag over graph)
+
+			</div>
+	</div>
+	<div class="graph"><canvas id="canvas2" width="800" height="300"></canvas></div>
+</div>
+<script type="text/javascript" src="main2.js"></script></div></body></html>

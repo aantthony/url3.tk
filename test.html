@@ -1,0 +1,29 @@
+
+<h1>Test</h1>
+<div id="container"></div>
+<div id="container2"></div>
+<script>
+function graph(commands,width,height){
+var my_graph=document.createElement("iframe");
+url="http://url3.tk/graph.tk/";
+my_graph.src=url;
+my_graph.style.width=(width|500)+"px";
+my_graph.style.height=(height|400)+"px";
+
+my_graph.onload=function(){
+    function g(m){
+        my_graph.contentWindow.postMessage(m,url);
+    };
+    commands.forEach(function(c){
+        g(c);
+    });
+}
+return my_graph;
+
+
+}
+
+document.getElementById("container").appendChild(graph(["add:x","center:0,0","add:2x","add:sin(x+x*log(x))"]));
+document.getElementById("container2").appendChild(graph(["add:x^2","add:x!","center:0,0"]));
+//Methods include: add, block, empty, scale, translate, center
+</script>
