@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Page not found</title>
+   <meta name="author" content="Anthony" />
+   <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20673813-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<style type="text/css">
+*{margin:0;padding:0;
+-webkit-user-select:none;
+user-select:none;
+-moz-user-select:none;
+cursor:default;}
+html{}
+body{
+	font-family:Helvetia,Arial,sans-serif;	
+	background:#c2c2c2 url(404bg.jpg);
+}
+#content{
+	text-align:center;
+	padding-top:200px;
+	font-size:30px;
+	position:relative;
+}
+.fade{
+	opacity:0.0;
+	position:relative;
+	-webkit-transition:opacity ease-out 0.4s;
+}
+#pages{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-Index:4;
+}
+#pages div{
+	background:url(page.png);
+	width:89px;
+	height:120px;
+	position:absolute;
+	-webkit-transition:-webkit-transform linear 0.1s;
+}
+#pages div:hover{
+	outline: auto 5px -webkit-focus-ring-color; outline-offset: -1px;
+		-moz-outline: -moz-mac-focusring solid 2px; -moz-outline-radius: 0 7px 7px;
+		-moz-outline-offset: 0;
+		
+}
+#info{
+	position:fixed;
+	top:10px;
+	right:10px;
+	background:rgba(0,0,0,0.3);
+	padding:16px;
+	color:white;
+	border-radius:8px;
+	-moz-border-radius:8px;
+	width:200px;
+	opacity:0.0;
+}
+</style>
+</head>
+<body>
+<div id="info">
+	<div>Filename: <span id="filename">???</span></div>
+	<div>Size: <span id="filesize">???</span> bytes</div>
+</div>
+<div id="pages"></div>
+<div id="content">
+<div class="fade"><img class="inset" alt="Page Not Found" src="notfound.png" />
+<p style="font-size:15px;color:#555;text-shadow:0px 1px 0px white">Now look at mess you've made!</p>
+</div>
+</div>
+<script type="text/javascript" src="pages.js"></script>
+<script type="text/javascript">pages(30);</script>
+</body>
+</html>

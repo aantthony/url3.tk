@@ -1,0 +1,31 @@
+---
+layout: nil
+---
+<!DOCTYPE html>
+<html>
+<head>
+<title>Explode! - Click to explode!</title>
+<style type="text/css">
+*{margin:0;padding:0;overflow:hidden;}
+body{color:white;font-family:sans-serif;}
+#c{padding:8px;user-select:none;-webkit-user-select:none;-moz-user-select:none;font-family:'Menlo','Andale Mono', Consolas, 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Monaco, monofur, monospace;}
+</style>
+<meta property="og:title" content="Explode!"/>
+    <meta property="og:type" content="game"/>
+    <meta property="og:url" content="http://url3.tk/explode/"/>
+    <meta property="og:image" content="http://url3.tk/img/c/explode.png"/>
+    <meta property="og:site_name" content="url3.tk"/>
+    <meta property="og:description" content="A html5 Chrome Experiment - Click for explosions! There's also a counter that displays the total amount of particles shattered in all of the explosions."/>
+{% include analytics.html %}
+</head>
+<body>
+	<div id="c" style="position:fixed;top:0;right:0;opacity:0.4">0</div>
+	
+	<div id="info" style="position:fixed;top:0;padding:10em;text-align:center;right:0;left:0;color:#999;font-family:HelveticaNeue-Light, HelveticaNeue, Helvetica,sans-serif;">
+Click Here!
+	</div>
+<canvas id="canvas"></canvas>
+
+<script type="text/javascript" src="aai.js"></script>
+</body>
+</html>

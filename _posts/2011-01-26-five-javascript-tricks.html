@@ -1,0 +1,67 @@
+---
+layout: post
+title: 5 Useful javascript tricks
+---
+<p>Javascript is a great language. I've written a short list of five useful javascript features and techniques that are a must-know.</p>
+<h2>1. Closures</h2>
+<p>Prevent setting global variables by putting all your code in a function. Like this:
+{% highlight javascript %}
+(function(){
+	//Everything goes in here
+	//This x variable is not accessible to the outside world.
+	var x="Hello World";
+}());
+{% endhighlight %}
+</p>
+<p>Usings closures promotes good code structure, protects private variables, and ensures that your code won't interfere with any other scripts running on the page.</p>
+<h2>2. JSON</h2><p>JSON (JavaScript Object Notation) is a way to describe objects.</p>
+
+{% highlight javascript %}
+var me={
+	"name":"John Smith",
+	"location":[-40.000,150.000],
+	"description":"",
+	"interests":{
+		"movies":[],
+		"music":["All music"]
+	}
+};
+alert(me.name);//or alert(me["name"]);
+alert("JSON representation: "+JSON.stringify(me));
+alert(JSON.stringify(JSON.parse(JSON.stringify(me)))==JSON.stringify(me))
+{% endhighlight %}	
+<h2>3. Prototyping</h2><p>
+Have you ever used the new Keyword()? Well when you do, the object returned from the function (provided the function doesn't "return" an object manually), has its prototype set.
+{% highlight javascript %}
+function Message(title,body,imagesrc){
+	this.title=title;
+	this.body=body;
+	if(imagesrc){
+		this.imagesrc=imagesrc;
+	}
+}
+//If a message doesn't have an imagesrc, it will inherit it from its prototype chain.
+Message.prototype.imagesrc="default.png";
+Message.prototype.alert=function(){
+	alert(this.title+"\n"+this.body);
+	return this;
+}
+var msg=new Message("Title","Body");
+msg.alert().alert();
+{% endhighlight %}
+</p>
+<p>You can also add methods to objects such as Array, Function, and Object.
+For example:
+{% highlight javascript %}
+Array.prototype.sum=function(){
+	return this.reduce(function(x,y){return x+y;})
+};
+alert([1,2,3].sum());//1+2+3=6
+{% endhighlight %}
+<h2>4. jQuery</h2><p>
+jQuery is great! I suggest you read more about it in <a href="http://jqfundamentals.com/book/book.html">jQuery Fundementals</a> (A great guide), or on the <a href="">jQuery website</a>.
+</p>
+<h2>5. Console</h2><p>
+I find using the consoles in Safari, Chrome and Firefox really speed up development. Using console.log() is often easier than messing around with alert().
+</p>
+<p>Post your favourite javascript "tricks" in the comments.</p>

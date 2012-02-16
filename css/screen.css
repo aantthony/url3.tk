@@ -1,0 +1,130 @@
+*{
+    margin:0;padding:0;
+    text-rendering: optimizelegibility;
+}
+img{border:none}
+
+h1,h2,h3{
+    font-weight:normal;
+    font-family:Georgia,serif;
+    margin-top:2em;
+	margin-bottom:1em;
+}
+h1{
+	margin-top:0;
+}
+body{
+    background:#e8e8e8 url(bg.png) repeat-x;
+    /*font-family:HelveticaNeue-Light, HelveticaNeue, Helvetica,sans-serif;*/
+    font-family:Georgia,serif;
+    padding-bottom:1em;
+    line-height:140%;
+}
+.icon{
+    width:64px;
+    height:64px;
+    vertical-align:middle;
+    text-align:center;
+    display:inline-block;
+}
+p{
+    font-size:medium;
+    margin-bottom:1em;
+}
+ul.posts{
+    list-style:none;
+    margin-left:0;
+}
+ul.posts span{
+    font-family: Monaco, 'Courier New', monospace;
+    font-size:80%;
+    color:#999;
+}
+
+ul.posts.darker span{
+    color:#444;
+}
+ul.posts img{
+    vertical-align:middle;
+    border:none;
+}
+img{border:none}
+.page{
+    background:white;
+    border:1px solid #bbb;
+    -webkit-box-shadow:0px 1px 2px #aaa;
+    -moz-box-shadow:0px 1px 2px #aaa;
+    -o-box-shadow:0px 1px 2px #aaa;
+    width:900px;
+    margin:auto;
+    padding:20px;
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -o-border-radius:4px;
+}
+header aside {
+    float:right;
+}
+header aside a{
+    position:relative;
+    left:0px;
+    text-decoration:none;
+    color:black;
+    display:block;
+    background:rgba(255,255,255,0.7);
+    -webkit-transition: left 0.1s ease-out;
+    -moz-transition: left 0.1s ease-out;
+    padding:1em;
+    margin:8px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -o-border-radius:5px;
+}
+header aside a:hover{
+    -webkit-box-shadow:0px 0px 5px #444;
+    -o-box-shadow:0px 0px 5px #444;
+    -moz-box-shadow:0px 0px 5px #444;
+    left:5px;
+    background:rgba(255,255,255,0.9);
+}
+.highlight{
+    margin:2em;
+}
+#root:before{
+	content:"/";
+}
+#root:after{
+	content:"/";
+}
+ol,ul{margin-left:2em;margin-bottom:1em}
+header{
+    width:900px;
+    margin:auto;
+    padding:20px;
+    height:120px;
+    display:block;
+}
+footer{
+    display:block;
+    width:900px;
+    margin:auto;
+    padding:20px;
+    font-size:small;
+    color:#888;
+    text-shadow:0px 1px 0px white;
+}
+footer:before{
+    content:"Copyright © ";
+}
+footer:after{
+    content:" 2011";
+}
+header h1{
+    margin-top:50px;
+    font-size:250%;
+}
+header h1 a{
+    color:black;
+    text-decoration:none;
+    text-shadow:0px 1px 0px white;
+}
